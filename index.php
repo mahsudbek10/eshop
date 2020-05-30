@@ -1,9 +1,11 @@
 <!DOCTYPE php>
 <html lang="en">
-    <?php $project = "/P3";
-    if ($_SERVER['REQUEST_URI']=="$project/index.php"): 
-        header("Location: index"); 
-    else: require_once 'head.php'; ?>
+    <?php
+    $project = "/P3";
+    if ($_SERVER['REQUEST_URI'] == "$project/index.php"):
+        header("Location: index");
+    else: require_once 'head.php';
+        ?>
         <body>
             <header id="header"><!--header-->
                 <div class="header_top"><!--header_top-->
@@ -880,7 +882,7 @@
             </section>
 
 
-            <?php require_once 'footer.php'; ?>
+        <?php require_once 'footer.php'; ?>
         </body>
-    <?php endif; ?>
+<?php endif; ?>
 </html>
