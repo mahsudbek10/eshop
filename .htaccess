@@ -10,10 +10,10 @@ RewriteRule ^([^.]+)$ $1.htm [NC,L]
 
 
 #401 Авторизация не выполнена
-ErrorDocument 401 401.html
+ErrorDocument 401 401.php
 #403 Доступ запрещен
-ErrorDocument 403 403.html
+ErrorDocument 403 403.php
 #404 Страница не найдена
 ErrorDocument 404 404.php
 #500 Внутренняя ошибка сервера
-ErrorDocument 500 500.html
+ErrorDocument 500 500.php
