@@ -35,7 +35,9 @@
                                             <a href="<?= $c['link'] ?>" class="btn btn-default get">Get it now</a>
                                         </div>
                                         <div class="col-sm-6">
+                                            <div style="height: 250px">
                                             <?= $c['imagee'] ?>
+                                            </div>
                                             <!--<img src="images/home/girl1.jpg" class="girl img-responsive" alt="" />-->
                                             <img src="images/home/pricing.png"  class="pricing" alt="" />
                                         </div>
@@ -238,287 +240,107 @@
                         <div class="category-tab"><!--category-tab-->
                             <div class="col-sm-12">
                                 <ul class="nav nav-tabs">
-                                    <li class="active"><a href="#tshirt" data-toggle="tab">T-Shirt</a></li>
-                                    <li><a href="#blazers" data-toggle="tab">Blazers</a></li>
-                                    <li><a href="#sunglass" data-toggle="tab">Sunglass</a></li>
-                                    <li><a href="#kids" data-toggle="tab">Kids</a></li>
-                                    <li><a href="#poloshirt" data-toggle="tab">Polo shirt</a></li>
+                                    <li class="active"><a href="#classic" data-toggle="tab">Классика</a></li>
+                                    <li><a href="#jeans" data-toggle="tab">Джинсы</a></li>
+                                    <li><a href="#tshirts" data-toggle="tab">Футболки</a></li>
+                                    <li><a href="#bags" data-toggle="tab">Сумки</a></li>
+                                    <li><a href="#shoe" data-toggle="tab">Туфля</a></li>
                                 </ul>
                             </div>
                             <div class="tab-content">
-                                <div class="tab-pane fade active in" id="tshirt" >
+                                <div class="tab-pane fade active in" id="classic" >
+                                    <?php $tab = R::getAll("SELECT id, name, description, imagee, price FROM view_shopping WHERE typee2_id = 9 OR typee2_id = 10 ORDER BY date_register ASC"); foreach ($tab as $t): ?>
                                     <div class="col-sm-3">
                                         <div class="product-image-wrapper">
                                             <div class="single-products">
                                                 <div class="productinfo text-center">
-                                                    <img src="images/home/gallery1.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+<!--                                                    <img src="images/home/gallery1.jpg" alt="" />-->
+                                                    <?= $t['imagee']; ?>
+                                                    <h2><?= $t['price']; ?> тг</h2>
+                                                    <p><?= $t['name']; ?></p>
+                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Добавить в корзину</a>
                                                 </div>
 
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/gallery2.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/gallery3.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/gallery4.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php endforeach; ?>
                                 </div>
 
-                                <div class="tab-pane fade" id="blazers" >
+                                <div class="tab-pane fade" id="jeans" >
+                                    <?php $tab = R::getAll("SELECT id, name, description, imagee, price FROM view_shopping WHERE typee2_id = 9 OR typee2_id = 10 ORDER BY date_register ASC"); foreach ($tab as $t): ?>
                                     <div class="col-sm-3">
                                         <div class="product-image-wrapper">
                                             <div class="single-products">
                                                 <div class="productinfo text-center">
-                                                    <img src="images/home/gallery4.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+<!--                                                    <img src="images/home/gallery1.jpg" alt="" />-->
+                                                    <?= $t['imagee']; ?>
+                                                    <h2><?= $t['price']; ?> тг</h2>
+                                                    <p><?= $t['name']; ?></p>
+                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Добавить в корзину</a>
                                                 </div>
 
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/gallery3.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/gallery2.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/gallery1.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php endforeach; ?>
                                 </div>
 
-                                <div class="tab-pane fade" id="sunglass" >
+                                <div class="tab-pane fade" id="tshirts" >
+                                    <?php $tab = R::getAll("SELECT id, name, description, imagee, price FROM view_shopping WHERE typee2_id = 9 OR typee2_id = 10 ORDER BY date_register ASC"); foreach ($tab as $t): ?>
                                     <div class="col-sm-3">
                                         <div class="product-image-wrapper">
                                             <div class="single-products">
                                                 <div class="productinfo text-center">
-                                                    <img src="images/home/gallery3.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+<!--                                                    <img src="images/home/gallery1.jpg" alt="" />-->
+                                                    <?= $t['imagee']; ?>
+                                                    <h2><?= $t['price']; ?> тг</h2>
+                                                    <p><?= $t['name']; ?></p>
+                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Добавить в корзину</a>
                                                 </div>
 
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/gallery4.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/gallery1.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/gallery2.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php endforeach; ?>
                                 </div>
 
-                                <div class="tab-pane fade" id="kids" >
+                                <div class="tab-pane fade" id="bags" >
+                                    <?php $tab = R::getAll("SELECT id, name, description, imagee, price FROM view_shopping WHERE typee2_id = 9 OR typee2_id = 10 ORDER BY date_register ASC"); foreach ($tab as $t): ?>
                                     <div class="col-sm-3">
                                         <div class="product-image-wrapper">
                                             <div class="single-products">
                                                 <div class="productinfo text-center">
-                                                    <img src="images/home/gallery1.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+<!--                                                    <img src="images/home/gallery1.jpg" alt="" />-->
+                                                    <?= $t['imagee']; ?>
+                                                    <h2><?= $t['price']; ?> тг</h2>
+                                                    <p><?= $t['name']; ?></p>
+                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Добавить в корзину</a>
                                                 </div>
 
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/gallery2.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/gallery3.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/gallery4.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php endforeach; ?>
                                 </div>
 
-                                <div class="tab-pane fade" id="poloshirt" >
+                                <div class="tab-pane fade" id="shoe" >
+                                    <?php $tab = R::getAll("SELECT id, name, description, imagee, price FROM view_shopping WHERE typee2_id = 9 OR typee2_id = 10 ORDER BY date_register ASC"); foreach ($tab as $t): ?>
                                     <div class="col-sm-3">
                                         <div class="product-image-wrapper">
                                             <div class="single-products">
                                                 <div class="productinfo text-center">
-                                                    <img src="images/home/gallery2.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+<!--                                                    <img src="images/home/gallery1.jpg" alt="" />-->
+                                                    <?= $t['imagee']; ?>
+                                                    <h2><?= $t['price']; ?> тг</h2>
+                                                    <p><?= $t['name']; ?></p>
+                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Добавить в корзину</a>
                                                 </div>
 
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-sm-3">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/gallery4.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/gallery3.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="product-image-wrapper">
-                                            <div class="single-products">
-                                                <div class="productinfo text-center">
-                                                    <img src="images/home/gallery1.jpg" alt="" />
-                                                    <h2>$56</h2>
-                                                    <p>Easy Polo Black Edition</p>
-                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <?php endforeach; ?>
                                 </div>
                             </div>
                         </div><!--/category-tab-->
