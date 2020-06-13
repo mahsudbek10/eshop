@@ -6,19 +6,21 @@
         <div class="bg">
             <div class="row">    		
                 <div class="col-sm-12">    			   			
-                    <h2 class="title text-center">Contact <strong>Us</strong></h2>    			    				    				
+                    <h2 class="title text-center">СВЯЗАТЬСЯ <strong>С НАМИ</strong></h2>    			    				    				
                     <div id="gmap" class="contact-map">
                         <iframe
                             src="https://maps.google.com/maps?width=100%&amp;height=600&amp;hl=en&amp;q=%D0%BF%D1%80%D0%BE%D1%81%D0%BF.%20%D0%9A%D0%B0%D0%B1%D0%B0%D0%BD%D0%B1%D0%B0%D0%B9%20%D0%91%D0%B0%D1%82%D1%8B%D1%80%D0%B0%2028+()&amp;ie=UTF8&amp;t=&amp;z=16&amp;iwloc=B&amp;output=embed"
                             width="100%" height="380" frameborder="0" style="border: 0"
-                            allowfullscreen></iframe>
+                            allowfullscreen>
+                        </iframe>
                     </div>
                 </div>			 		
             </div>    	
+            <?php if(isset($_SESSION['mess_eshop'])){echo $_SESSION['mess_eshop']; unset($_SESSION['mess_eshop']);}?>
             <div class="row">  	
                 <div class="col-sm-8">
                     <div class="contact-form">
-                        <h2 class="title text-center">Get In Touch</h2>
+                        <h2 class="title text-center">СВЯЗАТЬСЯ</h2>
                         <div class="status alert alert-success" style="display: none"></div>
                         <form id="main-contact-form" class="contact-form row" name="contact-form" method="post">
                             <div class="form-group col-md-6">
@@ -31,7 +33,7 @@
                                 <input type="text" name="subject" class="form-control" required="required" placeholder="Subject">
                             </div>
                             <div class="form-group col-md-12">
-                                <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your Message Here"></textarea>
+                                <textarea name="message" id="message" class="form-control" required="required" rows="8" placeholder="Your Message Here"></textarea>
                             </div>                        
                             <div class="form-group col-md-12">
                                 <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">
@@ -41,29 +43,29 @@
                 </div>
                 <div class="col-sm-4">
                     <div class="contact-info">
-                        <h2 class="title text-center">Contact Info</h2>
+                        <h2 class="title text-center">КОНТАКТНАЯ ИНФОРМАЦИЯ</h2>
                         <address>
                             <p>E-Shopper Inc.</p>
-                            <p>935 W. Webster Ave New Streets Chicago, IL 60614, NY</p>
-                            <p>Newyork USA</p>
-                            <p>Mobile: +2346 17 38 93</p>
+                            <p>Республика Казахстан</p>
+                            <p>Нур-Султан</p>
+                            <p>Телефон: +7 707 323 45 26</p>
                             <p>Fax: 1-714-252-0026</p>
-                            <p>Email: info@e-shopper.com</p>
+                            <p>Email: info@epolice.kz</p>
                         </address>
                         <div class="social-networks">
-                            <h2 class="title text-center">Social Networking</h2>
+                            <h2 class="title text-center">СОЦИАЛЬНАЯ СЕТЬ</h2>
                             <ul>
                                 <li>
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
+                                    <a href="https://epolice.kz"><i class="fa fa-facebook"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
+                                    <a href="https://epolice.k"><i class="fa fa-twitter"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-google-plus"></i></a>
+                                    <a href="https://epolice.k"><i class="fa fa-google-plus"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-youtube"></i></a>
+                                    <a href="https://epolice.k"><i class="fa fa-youtube"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -75,3 +77,30 @@
     <?php require_once 'footer.php'; ?>
 </body>
 </html>
+
+<?php 
+    if($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["submit"])){
+        
+        if(isset($_POST["submit"], $_POST["name"], $_POST["email"], $_POST["subject"], $_POST["message"])){
+            require './csrf/Validation.php';
+            require './db/db.php';
+            $_POST["submit"] = Validation::input($_POST["submit"]);
+            $_POST["name"] = Validation::input($_POST["name"]);
+            $_POST["email"] = Validation::input($_POST["email"]);
+            $_POST["subject"] = Validation::input($_POST["subject"]);
+            $_POST["message"] = Validation::input($_POST["message"]);
+            $ok = R::exec("INSERT INTO contact_reviews (name, email, subject, messeage) VALUES (?,?,?,?);", 
+                    [$_POST["name"], $_POST["email"], $_POST["subject"], $_POST["message"]]);
+            if($ok){
+                $_SESSION['mess_eshop'] = "<div class='text-success fa fa-check' role='alert'>
+                This is a primary alert—check it out! 
+            </div>";
+            } else {
+                $_SESSION['mess_eshop'] = "<div class='text-success fa fa-check' role='alert'>
+                This is a primary alert—check it out! 
+            </div>";
+            }
+            echo '<script>location.href = ("contact-us.php")</script>';
+        }
+    }
+?>
