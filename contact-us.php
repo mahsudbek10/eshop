@@ -24,16 +24,16 @@
                         <div class="status alert alert-success" style="display: none"></div>
                         <form id="main-contact-form" class="contact-form row" name="contact-form" method="post">
                             <div class="form-group col-md-6">
-                                <input type="text" name="name" class="form-control" required="required" placeholder="Name">
+                                <input type="text" name="name" class="form-control" required="required" placeholder="Имя">
                             </div>
                             <div class="form-group col-md-6">
                                 <input type="email" name="email" class="form-control" required="required" placeholder="Email">
                             </div>
                             <div class="form-group col-md-12">
-                                <input type="text" name="subject" class="form-control" required="required" placeholder="Subject">
+                                <input type="text" name="subject" class="form-control" required="required" placeholder="Тема">
                             </div>
                             <div class="form-group col-md-12">
-                                <textarea name="message" id="message" class="form-control" required="required" rows="8" placeholder="Your Message Here"></textarea>
+                                <textarea name="message" id="message" class="form-control" required="required" rows="8" placeholder="Ваше сообщение"></textarea>
                             </div>                        
                             <div class="form-group col-md-12">
                                 <input type="submit" name="submit" class="btn btn-primary pull-right" value="Submit">
@@ -93,11 +93,11 @@
                     [$_POST["name"], $_POST["email"], $_POST["subject"], $_POST["message"]]);
             if($ok){
                 $_SESSION['mess_eshop'] = "<div class='text-success fa fa-check' role='alert'>
-                This is a primary alert—check it out! 
+                <h4>Ваш отзыв успешно принят! Сотрудники в ближайшее время с вами свяжутся</h4>
             </div>";
             } else {
-                $_SESSION['mess_eshop'] = "<div class='text-success fa fa-check' role='alert'>
-                This is a primary alert—check it out! 
+                $_SESSION['mess_eshop'] = "<div class='text-danger fa fa-warning' role='alert'>
+                <h4>Ууупс, что-то пошло не так, повторите заново</h4>
             </div>";
             }
             echo '<script>location.href = ("contact-us.php")</script>';

@@ -14,6 +14,6 @@ ErrorDocument 401 401.php
 #403 Доступ запрещен
 ErrorDocument 403 403.php
 #404 Страница не найдена
-ErrorDocument 404 404.php
+ErrorDocument 404 /P3/404.php
 #500 Внутренняя ошибка сервера
 ErrorDocument 500 500.php
